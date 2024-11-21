@@ -19,14 +19,18 @@ return {
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 			local lspconfig = require("lspconfig")
+			-- NOTE Add new setup here everytime a new LSP is installed
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities
 			})
 			lspconfig.jdtls.setup({
 				capabilities = capabilities
 			})
+			lspconfig.lemminx.setup({
+				capabilities = capabilities
+			})
 
-			-- KEYMAPS
+			-- LSP KEYMAPS
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
