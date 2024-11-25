@@ -15,18 +15,28 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.incsearch = true
 
+vim.cmd([[
+  command! W write
+  command! Wq wq
+  command! WQ wq
+  command! Wqa wqa
+  command! WQa wqa
+  command! WQA wqa
+]])
+
 ---------------------------------------------------------------------------------------------------------------------------------
 -- Keymaps
 ---------------------------------------------------------------------------------------------------------------------------------
 ---Shortcuts
 vim.keymap.set('v', '<C-c>', '"+y', { noremap = true })
-vim.keymap.set('n', '<leader>n' , ":Ex<CR>")
+--  vim.keymap.set('n', '<leader>n' , ":Ex<CR>")
 vim.keymap.set('n', 'S', ':%s/', { noremap = true })
 vim.keymap.set('v', 'S', ':s/', { noremap = true })
 
 vim.keymap.set('n', '<leader>ww', ':w<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>wq', ':wq<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>qq', ':q!<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>wqa', ':wqa<CR>', { noremap = true })
 
 -- Terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
